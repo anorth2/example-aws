@@ -93,3 +93,8 @@ action "List Public IP" {
   args = ["get services -o wide"]
   secrets = ["AWS_ACCESS_KEY_ID", "AWS_SECRET_ACCESS_KEY"]
 }
+
+workflow "New workflow" {
+  on = "push"
+}# Build
+# AWS
