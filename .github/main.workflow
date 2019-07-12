@@ -1,6 +1,6 @@
 workflow "Build and Deploy" {
-  on = "push"
   resolves = ["List Public IP"]
+  on = "push"
 }
 
 # Build
@@ -32,8 +32,12 @@ action "Tag image for ECR" {
   needs = ["Build Docker image"]
   uses = "actions/docker/tag@master"
   env = {
-    CONTAINER_REGISTRY_PATH = "377117578606.dkr.ecr.us-west-2.amazonaws.com"
-    IMAGE_NAME = "aws-example"
+    CONTAINER_REGISTRY_PATH = "123094825799.dkr.ecr.us-west-2.amazonaws.com/test-github-actions"
+    IMAGE_NAME = "flask-example"
+
+    # Build
+
+    # AWS
   }
   args = ["$IMAGE_NAME", "$CONTAINER_REGISTRY_PATH/$IMAGE_NAME"]
 }
