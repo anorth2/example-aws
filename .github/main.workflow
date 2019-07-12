@@ -98,7 +98,16 @@ action "List Public IP" {
   secrets = ["AWS_ACCESS_KEY_ID", "AWS_SECRET_ACCESS_KEY"]
 }
 
+workflow "New workflow" {
+  on = "push"
+  resolves = ["Filters for GitHub Actions"]
+}
+
+action "Filters for GitHub Actions" {
+  uses = "actions/bin/filter@3c0b4f0e63ea54ea5df2914b4fabf383368cd0da"
+}# Build
+# AWS
 # Build
-
-
+# AWS
+# Build
 # AWS
